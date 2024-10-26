@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgn33m7carcx8"]
+
+[ext_resource type="Script" path="res://scripts/multijoueur/multiplayer_player.gd" id="1_f1bsw"]
+[ext_resource type="Texture2D" uid="uid://vi4m6qph0dlp" path="res://assets/icon.svg" id="1_plg55"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_t7erx"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="MultiplayerPlayer" type="CharacterBody2D"]
+script = ExtResource("1_f1bsw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.376917, 0.760056, 0.37032, 1)
+texture = ExtResource("1_plg55")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_t7erx")

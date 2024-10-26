@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://dw2uvbj3u5ijr"]
+
+[ext_resource type="Script" path="res://scripts/multijoueur/base_multijoueur.gd" id="1_l6rb6"]
+[ext_resource type="PackedScene" uid="uid://bgn33m7carcx8" path="res://scenes/multiplayer_player.tscn" id="2_2fhgi"]
+[ext_resource type="Texture2D" uid="uid://dh4bfkf3eecr" path="res://assets/logo_sans_bg.png" id="2_ttmjr"]
+
+[node name="MultiplayerGame" type="Node2D"]
+script = ExtResource("1_l6rb6")
+player_scene = ExtResource("2_2fhgi")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer"]
+show_behind_parent = true
+z_index = -10
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_ttmjr")
+expand_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Insert Port"
+
+[node name="Host" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Host"
+
+[node name="Join" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Join"
+
+[node name="Players" type="Node2D" parent="."]
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://scenes/multiplayer_player.tscn")
+spawn_path = NodePath("../Players")
+spawn_limit = 4
+
+[connection signal="text_changed" from="CanvasLayer/MarginContainer/VBoxContainer/LineEdit" to="." method="port_changed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Join" to="." method="_on_join_pressed"]

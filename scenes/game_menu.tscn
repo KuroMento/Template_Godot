@@ -1,0 +1,147 @@
+[gd_scene load_steps=4 format=3 uid="uid://p24oeh7r6nxy"]
+
+[ext_resource type="Script" path="res://scripts/game_menu.gd" id="1_ngkxp"]
+[ext_resource type="Script" path="res://scripts/apprendre/boucle_godot.gd" id="2_8402r"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_mbom0"]
+color = Color(1, 1, 1, 1)
+grow_begin = -100.0
+grow_end = -100.0
+thickness = 5
+
+[node name="GameMenu" type="CanvasLayer"]
+script = ExtResource("1_ngkxp")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 72
+text = "Template de la Formation"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = SubResource("StyleBoxLine_mbom0")
+
+[node name="VBoxContainer(Buttons)" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer(Buttons)"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 8.0
+theme_override_constants/separation = 20
+
+[node name="Simple2D" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer(Buttons)/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer(Buttons)/HBoxContainer/Simple2D"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -25.5
+offset_right = 103.0
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/bold_italics_font_size = 36
+theme_override_font_sizes/italics_font_size = 36
+theme_override_font_sizes/mono_font_size = 36
+theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/bold_font_size = 36
+bbcode_enabled = true
+text = "[wave][i] Simple 2D [/i][/wave]"
+scroll_active = false
+
+[node name="Split-Screen" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer(Buttons)/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer(Buttons)/HBoxContainer/Split-Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -123.5
+offset_top = -27.5
+offset_right = 128.5
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/bold_italics_font_size = 36
+theme_override_font_sizes/italics_font_size = 36
+theme_override_font_sizes/mono_font_size = 36
+theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/bold_font_size = 36
+bbcode_enabled = true
+text = "[wave] Split | Screen [/wave]"
+
+[node name="Multiplayer" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer(Buttons)/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer(Buttons)/HBoxContainer/Multiplayer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -101.0
+offset_top = -27.5
+offset_right = 128.0
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/bold_italics_font_size = 36
+theme_override_font_sizes/italics_font_size = 36
+theme_override_font_sizes/mono_font_size = 36
+theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/bold_font_size = 36
+bbcode_enabled = true
+text = "[wave][rainbow] Multiplayer [/rainbow] [/wave]"
+
+[node name="Quit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer(Buttons)"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 28
+text = "Quit"
+
+[node name="BoucleGodot" type="Node" parent="."]
+script = ExtResource("2_8402r")
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer(Buttons)/HBoxContainer/Simple2D" to="." method="on_simple2d_game_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer(Buttons)/HBoxContainer/Multiplayer" to="." method="on_multiplayer_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer(Buttons)/Quit" to="." method="on_quit_pressed"]
