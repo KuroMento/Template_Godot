@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://d26jxm7kch1bx"]
+
+[ext_resource type="Texture2D" uid="uid://cmqhs6xxcsyy8" path="res://assets/Tilemap/tilemap.png" id="1_vmkf7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ec4sh"]
+
+[node name="MovingPlatform" type="StaticBody2D"]
+collision_mask = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ec4sh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_vmkf7")
+hframes = 10
+vframes = 9
+frame = 24

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dj2pmxa4nkwpj"]
+
+[ext_resource type="Texture2D" uid="uid://cmqhs6xxcsyy8" path="res://assets/Tilemap/tilemap.png" id="1_dvijr"]
+[ext_resource type="PackedScene" uid="uid://0byvetm0henq" path="res://scenes/simple_2d/death_zone.tscn" id="2_4yugf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cv6cs"]
+size = Vector2(18, 10)
+
+[node name="Spike" type="Sprite2D"]
+texture_filter = 1
+texture = ExtResource("1_dvijr")
+hframes = 20
+vframes = 9
+frame = 68
+
+[node name="DeathZone" parent="." instance=ExtResource("2_4yugf")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_cv6cs")

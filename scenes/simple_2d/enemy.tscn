@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://bgur8pevkdeip"]
+
+[ext_resource type="Script" path="res://scripts/simple_2d/enemy.gd" id="1_hstfi"]
+[ext_resource type="Texture2D" uid="uid://dp141cqairnjj" path="res://assets/Tilemap/tilemap-characters.png" id="2_gujl8"]
+[ext_resource type="PackedScene" uid="uid://0byvetm0henq" path="res://scenes/simple_2d/death_zone.tscn" id="3_xeeoa"]
+
+[sub_resource type="Animation" id="Animation_jw3v3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [21]
+}
+
+[sub_resource type="Animation" id="Animation_8yc4i"]
+resource_name = "walk"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [21, 22]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5op68"]
+_data = {
+"RESET": SubResource("Animation_jw3v3"),
+"walk": SubResource("Animation_8yc4i")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_53uvf"]
+size = Vector2(17, 13)
+
+[node name="Enemy" type="Node2D" node_paths=PackedStringArray("raycast", "animation")]
+texture_filter = 1
+script = ExtResource("1_hstfi")
+raycast = NodePath("RayCast2D")
+animation = NodePath("AnimationPlayer")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.19209e-07, -1.19209e-07)
+scale = Vector2(0.875, 0.875)
+texture = ExtResource("2_gujl8")
+hframes = 9
+vframes = 3
+frame = 21
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+collide_with_areas = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5op68")
+}
+
+[node name="DeathZone" parent="." instance=ExtResource("3_xeeoa")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_53uvf")

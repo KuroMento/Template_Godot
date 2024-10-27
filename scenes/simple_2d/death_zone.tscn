@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://0byvetm0henq"]
+
+[ext_resource type="Script" path="res://scripts/simple_2d/death_zone.gd" id="1_086so"]
+
+[node name="DeathZone" type="Area2D"]
+collision_layer = 9
+collision_mask = 10
+script = ExtResource("1_086so")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

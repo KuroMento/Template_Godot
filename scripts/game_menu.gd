@@ -19,7 +19,7 @@ func on_quit_pressed() -> void:
 ## Vous amène vers un simple plateformer qui démontrer les capicités du moteur comme
 ## les signaux, les zones (Area2D), les ressources (enemmies) et les collisions. 
 func on_simple2d_game_pressed() -> void:
-	SceneManager.change_scene("res://scenes/simple_2d_game.tscn")
+	SceneManager.change_scene("res://scenes/simple_2d/simple_2d_game.tscn")
 
 ## Vous amène vers une scène en split-screen. Le code de la scèneen question comprend 
 ## aussi la manière de gérer différents inputs clavier et manettes.
@@ -32,4 +32,4 @@ func on_split_screen_pressed() -> void:
 ## Pour cela, Debug > Custom Run Instances > Enable Multiple Instances (en haut à gauche)
 ## puis mettre 2 instances ou plus si vous voulez tester pour 3, 4, etc.
 func on_multiplayer_pressed() -> void:
-	SceneManager.change_scene("res://scenes/multiplayer_game.tscn")
+	SceneManager.change_scene("res://scenes/multiplayer/multiplayer_game.tscn")
