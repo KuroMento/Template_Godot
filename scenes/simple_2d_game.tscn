@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://bkxup4yn3xa7e"]
+[gd_scene load_steps=2 format=3 uid="uid://bkxup4yn3xa7e"]
+
+[ext_resource type="Script" path="res://scripts/apprendre/boucle_godot.gd" id="1_is55n"]
 
 [node name="Simple2DGame" type="Node2D"]
+
+[node name="BoucleGodot" type="Node" parent="."]
+script = ExtResource("1_is55n")

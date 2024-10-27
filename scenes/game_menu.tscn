@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://p24oeh7r6nxy"]
+[gd_scene load_steps=3 format=3 uid="uid://p24oeh7r6nxy"]
 
 [ext_resource type="Script" path="res://scripts/game_menu.gd" id="1_ngkxp"]
-[ext_resource type="Script" path="res://scripts/apprendre/boucle_godot.gd" id="2_8402r"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_mbom0"]
 color = Color(1, 1, 1, 1)
@@ -138,9 +137,6 @@ size_flags_horizontal = 8
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 28
 text = "Quit"
-
-[node name="BoucleGodot" type="Node" parent="."]
-script = ExtResource("2_8402r")
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer(Buttons)/HBoxContainer/Simple2D" to="." method="on_simple2d_game_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer(Buttons)/HBoxContainer/Multiplayer" to="." method="on_multiplayer_pressed"]

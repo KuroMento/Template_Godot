@@ -42,6 +42,8 @@ func _input(event: InputEvent) -> void:
 ## [color=yellow]/!\ Cela n'inclut pas les touches ui_* que vous pouvez voir en cochant la case
 ## pour les "built-in" actions.[/color]
 func _unhandled_input(event: InputEvent) -> void:
+	if event == InputEventMouse or event == InputEventMouseMotion or event == InputEventMouseButton:
+		print("souris --(__ô>")
 	if event.is_pressed():
 		print("Voila un input non assigné, c'est pas bien de toucher à tout ^^")
 	if event.is_released():
