@@ -58,6 +58,9 @@ func une_fontion_chargee(parametre1, parametre2:String, parametre3:int = 42) -> 
 	else:
 		variable_locale -= parametre3
 	
+	if (parametre1 is int or parametre3 is int) and LA_REPONSE_A_LA_VIE == parametre3:
+		print("Les mots clés logique sont and, or, in et is !")
+	
 	for i in range(3):
 		print(3-i)
 	
