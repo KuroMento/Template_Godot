@@ -1,8 +1,9 @@
 # Template_Godot
 Ceci est le template de la formation Godot. Fait en premier lieu pour les participants de la Game Jam d'ATILLA sur l'année 2024 - 2025
 ## Installation
-1. Télécharger le dépôt
-2. Assurez-vous que vous ayez la version de Godot 4.3 d'installée
+1. Télécharger le dépôt dans le répertoire que vous souhaitez : git clone https://github.com/KuroMento/Template_Godot.git
+2. Assurez-vous que vous ayez la version de Godot 4.3 d'installée : https://godotengine.org/
+**Notes : Vous pouvez allez dans Code > Local > Download ZIP pour avoir le projet sans passer par une commande**
 ## Utilisation
 Lancer l'executable de Godot 4.3 qui vous amènera au gestionnaire de projet. Sélectionner *Importer* puis
 choisissez le clone du dépôt que vous venez de télécharger. **L'entièreté du code est documenté** ce qui veut dire que vous pouvez
