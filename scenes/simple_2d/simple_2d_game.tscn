@@ -11,7 +11,6 @@ size = Vector2(1236, 20)
 [node name="Simple2DGame" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_k6u20")
-split_screen = true
 
 [node name="TileMapLayers" type="Node2D" parent="."]
 
@@ -34,3 +33,20 @@ position = Vector2(-218, 264)
 shape = SubResource("RectangleShape2D_ylfdo")
 
 [node name="Players" type="Node2D" parent="."]
+
+[connection signal="body_entered" from="TileMapLayers/SolLayer/Coin" to="TileMapLayers/SolLayer/Coin" method="_on_player_collision"]
+[connection signal="body_entered" from="TileMapLayers/SolLayer/@Area2D@20721" to="TileMapLayers/SolLayer/@Area2D@20721" method="_on_player_collision"]
+[connection signal="body_entered" from="TileMapLayers/SolLayer/@Area2D@20722" to="TileMapLayers/SolLayer/@Area2D@20722" method="_on_player_collision"]
+[connection signal="body_entered" from="TileMapLayers/SolLayer/@Area2D@20730" to="TileMapLayers/SolLayer/@Area2D@20730" method="_on_player_collision"]
+[connection signal="body_entered" from="TileMapLayers/SolLayer/@Area2D@20731" to="TileMapLayers/SolLayer/@Area2D@20731" method="_on_player_collision"]
+[connection signal="body_entered" from="TileMapLayers/SolLayer/@Area2D@20732" to="TileMapLayers/SolLayer/@Area2D@20732" method="_on_player_collision"]
+[connection signal="body_entered" from="TileMapLayers/SolLayer/@Area2D@20733" to="TileMapLayers/SolLayer/@Area2D@20733" method="_on_player_collision"]
+[connection signal="body_entered" from="TileMapLayers/SolLayer/@Area2D@20734" to="TileMapLayers/SolLayer/@Area2D@20734" method="_on_player_collision"]
+[connection signal="body_entered" from="TileMapLayers/SolLayer/@Area2D@20735" to="TileMapLayers/SolLayer/@Area2D@20735" method="_on_player_collision"]
+[connection signal="body_entered" from="TileMapLayers/SolLayer/@Area2D@20736" to="TileMapLayers/SolLayer/@Area2D@20736" method="_on_player_collision"]
+[connection signal="body_entered" from="TileMapLayers/SolLayer/@Area2D@20737" to="TileMapLayers/SolLayer/@Area2D@20737" method="_on_player_collision"]
+[connection signal="body_entered" from="TileMapLayers/SolLayer/@Area2D@20738" to="TileMapLayers/SolLayer/@Area2D@20738" method="_on_player_collision"]
+[connection signal="body_entered" from="TileMapLayers/SolLayer/@Area2D@20739" to="TileMapLayers/SolLayer/@Area2D@20739" method="_on_player_collision"]
+[connection signal="body_entered" from="TileMapLayers/SolLayer/@Area2D@20740" to="TileMapLayers/SolLayer/@Area2D@20740" method="_on_player_collision"]
+[connection signal="body_entered" from="TileMapLayers/SolLayer/@Area2D@20743" to="TileMapLayers/SolLayer/@Area2D@20743" method="_on_player_collision"]
+[connection signal="body_entered" from="TileMapLayers/SolLayer/@Area2D@20744" to="TileMapLayers/SolLayer/@Area2D@20744" method="_on_player_collision"]
