@@ -17,6 +17,8 @@ const JUMP_VELOCITY = -350.0
 ## On récupère ici notre point de réapparition.
 func _ready() -> void:
 	spawn_point = get_tree().get_first_node_in_group("Spawn")
+	if spawn_point:
+		global_position = spawn_point.global_position
 
 ## Les différentes lines sont celles générées par Godot pour le mouvement d'un [CharacterBody2D].
 func _physics_process(delta: float) -> void:

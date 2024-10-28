@@ -11,7 +11,7 @@ extends Area2D
 
 ## Quand le joueur (voir collision layer et mask) entre en contact avec la pièce, on la détruit.
 ## Vous ne la collecterez qu'une seule fois de cette manière
-func _on_player_collision(body: Node2D) -> void:
+func _on_player_collision(_body: Node2D) -> void:
 	print("Coin collected !")
 	queue_free()
 

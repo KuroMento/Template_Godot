@@ -139,5 +139,6 @@ theme_override_font_sizes/font_size = 28
 text = "Quit"
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer(Buttons)/HBoxContainer/Simple2D" to="." method="on_simple2d_game_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer(Buttons)/HBoxContainer/Split-Screen" to="." method="on_split_screen_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer(Buttons)/HBoxContainer/Multiplayer" to="." method="on_multiplayer_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer(Buttons)/Quit" to="." method="on_quit_pressed"]

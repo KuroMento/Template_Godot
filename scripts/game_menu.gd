@@ -24,7 +24,7 @@ func on_simple2d_game_pressed() -> void:
 ## Vous amène vers une scène en split-screen. Le code de la scèneen question comprend 
 ## aussi la manière de gérer différents inputs clavier et manettes.
 func on_split_screen_pressed() -> void:
-	pass
+	SceneManager.change_scene("res://scenes/simple_2d/split_screen/split_screen_game.tscn")
 
 ## Vous amène vers la scène que je vous ai présenté pendant la formation.
 ## Le plus intéressant sera le code pour mieux comprendre mais si vous voulez

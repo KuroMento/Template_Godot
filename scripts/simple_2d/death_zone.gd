@@ -14,3 +14,6 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
 		var player := body as Player
 		player.respawn()
+	if body is SplitScreenPlayer:
+		var player := body as SplitScreenPlayer
+		player.respawn()

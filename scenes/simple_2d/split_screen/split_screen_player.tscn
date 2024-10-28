@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://rd2hp1wx1cra"]
+[gd_scene load_steps=7 format=3 uid="uid://bcy3kf4fyvfgp"]
 
-[ext_resource type="Script" path="res://scripts/simple_2d/player.gd" id="1_4j1bc"]
-[ext_resource type="Texture2D" uid="uid://dp141cqairnjj" path="res://assets/Tilemap/tilemap-characters.png" id="2_dxioy"]
+[ext_resource type="Script" path="res://scripts/split_screen/split_screen_player.gd" id="1_vm2bo"]
+[ext_resource type="Texture2D" uid="uid://dp141cqairnjj" path="res://assets/Tilemap/tilemap-characters.png" id="2_geysd"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_woioe"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d8ktp"]
 height = 24.0
 
 [sub_resource type="Animation" id="Animation_pqstn"]
@@ -43,31 +43,21 @@ _data = {
 "base": SubResource("Animation_owwr0")
 }
 
-[node name="Player" type="CharacterBody2D"]
+[node name="SplitScreenPlayer" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 13
-script = ExtResource("1_4j1bc")
+script = ExtResource("1_vm2bo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("2_dxioy")
+texture = ExtResource("2_geysd")
 hframes = 9
 vframes = 3
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_woioe")
+shape = SubResource("CapsuleShape2D_d8ktp")
 
 [node name="PlayerAnimations" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_vs5np")
 }
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2.5, 2.5)
-limit_left = -30
-limit_top = -30
-limit_right = 1775
-limit_bottom = 275
-limit_smoothed = true
-position_smoothing_enabled = true
-position_smoothing_speed = 8.0

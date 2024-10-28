@@ -1,0 +1,115 @@
+[gd_scene load_steps=3 format=3 uid="uid://o0l5kerox6y4"]
+
+[ext_resource type="Script" path="res://scripts/split_screen/split_screen_game.gd" id="1_3x88r"]
+[ext_resource type="PackedScene" uid="uid://bkxup4yn3xa7e" path="res://scenes/simple_2d/simple_2d_game.tscn" id="2_0jp88"]
+
+[node name="SplitScreenGame" type="CanvasLayer"]
+script = ExtResource("1_3x88r")
+nb_players = 4
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 5
+columns = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="GridContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="GridContainer/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(2, 2)
+render_target_update_mode = 0
+
+[node name="Simple2DGame" parent="GridContainer/SubViewportContainer/SubViewport" instance=ExtResource("2_0jp88")]
+
+[node name="Camera1" type="Camera2D" parent="GridContainer/SubViewportContainer/SubViewport" groups=["SplitCamera"]]
+zoom = Vector2(2.25, 2.25)
+limit_left = -30
+limit_top = -30
+limit_right = 1775
+limit_bottom = 275
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="GridContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="GridContainer/SubViewportContainer2"]
+handle_input_locally = false
+size = Vector2i(2, 2)
+render_target_update_mode = 0
+
+[node name="Camera2" type="Camera2D" parent="GridContainer/SubViewportContainer2/SubViewport" groups=["SplitCamera"]]
+zoom = Vector2(2.25, 2.25)
+limit_left = -30
+limit_top = -30
+limit_right = 1775
+limit_bottom = 275
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+
+[node name="SubViewportContainer3" type="SubViewportContainer" parent="GridContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="GridContainer/SubViewportContainer3"]
+handle_input_locally = false
+size = Vector2i(2, 2)
+render_target_update_mode = 0
+
+[node name="Camera3" type="Camera2D" parent="GridContainer/SubViewportContainer3/SubViewport" groups=["SplitCamera"]]
+zoom = Vector2(2.25, 2.25)
+limit_left = -30
+limit_top = -30
+limit_right = 1775
+limit_bottom = 275
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+
+[node name="SubViewportContainer4" type="SubViewportContainer" parent="GridContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="GridContainer/SubViewportContainer4"]
+handle_input_locally = false
+size = Vector2i(2, 2)
+render_target_update_mode = 0
+
+[node name="Camera4" type="Camera2D" parent="GridContainer/SubViewportContainer4/SubViewport" groups=["SplitCamera"]]
+zoom = Vector2(2.25, 2.25)
+limit_left = -30
+limit_top = -30
+limit_right = 1775
+limit_bottom = 275
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
