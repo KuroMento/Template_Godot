@@ -26,7 +26,7 @@ var players_on_host:Node2D
 
 ## Met à jour le port directement depuis la fenêtre de jeu dans le [LineEdit]
 func port_changed(new_text:String):
-	port = new_text
+	port = int(new_text)
 
 ## Récupère votre [member MultiplayerGame.peer] et utilise la méthode [method ENetMultiplayerPeer.create_server]
 ## pour générer un serveur à l'aide d'un [code]port[/code] et d'un entier pour dicter

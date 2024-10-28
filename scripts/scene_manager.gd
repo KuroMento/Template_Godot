@@ -30,12 +30,12 @@ func change_scene(path:String = "res://scenes/game_menu.tscn", start_transition:
 	# nous serons sur qu'aucun code de la scéne actuelle s'execute:
 	_start_transition = start_transition
 	_finish_transition = finish_transition
-	call_deferred("_deferred_change_scene",path,start_transition)
+	call_deferred("_deferred_change_scene",path)
 
-func _deferred_change_scene(path:String = "res://scenes/game_menu.tscn", transition:String = "fade_to_black") -> void:
+func _deferred_change_scene(path:String = "res://scenes/game_menu.tscn") -> void:
 	loading_screen = loading_screen_scene.instantiate() as LoadingScreen # On charge notre noeud de transitions
 	get_tree().root.add_child(loading_screen) # on l'ajoute à la ROOT pour cacher la scene actuelle
-	loading_screen.start_transition(transition) # on démarre sans attendre la transition
+	loading_screen.start_transition(_start_transition) # on démarre sans attendre la transition
 	_load_new_scene(path) #on va charger notre nouvelle scene en fond, viens voir plus bas !
 
 func _load_new_scene(path:String)->void:
